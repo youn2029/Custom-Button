@@ -24,6 +24,19 @@ class ViewController: UIViewController {
         
         // 루트 뷰에 버튼 추가
         self.view.addSubview(btn)
+        
+        // 버튼의 이벤트와 메소드 btnOnClick(_:)을 연결한다.
+        // _ target : 호출 할 메소드가 있는 인스턴스를 가르키는 매개변수
+        // action : 호출 할 메소드를 지정하는 매개변수
+        // for controlEvents : 액션 메소드의 실행 조건을 지정하는 매개변수
+        btn.addTarget(self, action: #selector(btnOnClick(_:)), for: .touchUpInside)
+    }
+    
+    @objc func btnOnClick(_ sender: Any) {
+        // 호출한 객체가 버튼이면
+        if let btn = sender as? UIButton {
+            btn.setTitle("클릭되었습니다.", for: .normal)
+        }
     }
 
 
