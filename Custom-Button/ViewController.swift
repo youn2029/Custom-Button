@@ -19,6 +19,9 @@ class ViewController: UIViewController {
         btn.frame = CGRect(x: 50, y: 100, width: 150, height: 30)     // 크기와 위치
         btn.setTitle("테스트 버튼", for: .normal)                        // 타이틀 (상태랑 같이 정의)
         
+        // 버튼을 수평 중앙 정령
+        btn.center = CGPoint(x: self.view.frame.width / 2 , y: 100)
+        
         // 루트 뷰에 버튼 추가
         self.view.addSubview(btn)
     }
